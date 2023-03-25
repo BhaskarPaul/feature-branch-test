@@ -25,9 +25,12 @@ void main() {
   print(getTwo());
 
   // calling a function after each 1 second
-  final timer = Timer(Duration(seconds: 2), () {
-    print("Timer called");
-  });
+  final timer = Timer(
+    Duration(seconds: 2),
+        () {
+      print("Timer called");
+    },
+  );
 
   timer.cancel();
 }
