@@ -15,5 +15,10 @@ void main() {
     return 1;
   }
 
+  int getTwo() {
+    return getOne() + 1;
+  }
+
   print(getOne());
+  print(getTwo());
 }
