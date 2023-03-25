@@ -1,3 +1,5 @@
+import 'dart:async';
+
 void main() {
   for (int i = 0; i < 10; i++) {
     print("Hello World");
@@ -21,4 +23,11 @@ void main() {
 
   print(getOne());
   print(getTwo());
+
+  // calling a function after each 1 second
+  final timer = Timer(Duration(seconds: 2), () {
+    print("Timer called");
+  });
+
+  timer.cancel();
 }
