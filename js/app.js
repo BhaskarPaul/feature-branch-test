@@ -9,3 +9,9 @@ for (let i = 10; i < 20; i++) {
 for (let i = 20; i < 30; i++) {
 	console.log("Hello World");
 }
+
+console.log(
+	(function add(a, b) {
+		return a + b;
+	})(1, 2)
+);
