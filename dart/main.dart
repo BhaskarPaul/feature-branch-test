@@ -1,24 +1,43 @@
 void main() {
-  for (int i = 0; i < 10; i++) {
-    print("Hello World");
-  }
-
-  for (int i = 10; i < 20; i++) {
-    print("Hello World Again!!");
-  }
-
-  for (int i = 20; i < 30; i++) {
-    print("Hello World Once More !!!");
-  }
+  _rangePrinter(
+    start: 0,
+    end: 10,
+    message: "Hello World",
+  );
+  _rangePrinter(
+    start: 10,
+    end: 20,
+    message: "Hello World Again !",
+  );
+  _rangePrinter(
+    start: 20,
+    end: 30,
+    message: "Hello World Once More !",
+  );
 
   int getOne() {
     return 1;
   }
 
-  int getTwo() {
-    return getOne() + 1;
+  int getTwo(Function localGetOne) {
+    return localGetOne() + 1;
   }
 
-  print(getOne());
-  print(getTwo());
+  _addDelay(seconds: 5);
+
+  print(getTwo(getOne));
+}
+
+void _rangePrinter({
+  required int start,
+  required int end,
+  required String message,
+}) {
+  for (int i = start; i < end; i++) {
+    print(message);
+  }
+}
+
+void _addDelay({required int seconds}) async {
+  await Future.delayed(Duration(seconds: seconds));
 }
