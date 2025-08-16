@@ -17,3 +17,7 @@ console.log(
 		return a + b;
 	})(1, 2)
 );
+
+export const fetchDemandCreationTableColumns = () => {
+	return [];
+}
